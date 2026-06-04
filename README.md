@@ -4,7 +4,7 @@ A hybrid semantic code search engine combining BM25, neural embeddings, and Reci
 
 ![Python](https://img.shields.io/badge/python-3.11-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?logo=fastapi&logoColor=white) ![React](https://img.shields.io/badge/react-18-61DAFB?logo=react&logoColor=black) ![FAISS](https://img.shields.io/badge/FAISS-1.7-lightgrey) ![License](https://img.shields.io/badge/license-MIT-green)
 
-![Search interface showing the hybrid code search UI with three retrieval mode toggles, example query chips, and the "Search code by intent, not just keywords" headline](docs/Screenshot%202026-06-04%20at%201.48.55%20AM.png)
+![Search interface showing the hybrid code search UI with three retrieval mode toggles, example query chips, and the "Search code by intent, not just keywords" headline](docs/landing.png)
 
 *Search page with BM25 / Dense / Hybrid mode toggles, optional TF-IDF query expansion, and six example queries chosen to show where semantic search outperforms keyword matching.*
 
@@ -36,7 +36,7 @@ Hybrid RRF outperforms both base retrievers on every metric. The +20.5% MRR gain
 
 ## Demo
 
-![Evaluation dashboard showing the +20.5% MRR headline banner, four metric stat cards, a grouped bar chart for quality metrics, an algorithm comparison radar chart, and the full results table with p50/p95 latency columns](docs/Screenshot%202026-06-04%20at%201.49.07%20AM.png)
+![Evaluation dashboard showing the +20.5% MRR headline banner, four metric stat cards, a grouped bar chart for quality metrics, an algorithm comparison radar chart, and the full results table with p50/p95 latency columns](docs/eval.png)
 
 *Evaluation dashboard at `/eval`, showing live metrics fetched from `eval_results.json` via the `/eval` API endpoint. The radar chart axes are IR metrics (MRR, NDCG@10, Recall@10); polygons are retrieval modes.*
 
