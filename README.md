@@ -146,10 +146,6 @@ Metrics are computed over 999 queries from the official CodeSearchNet Python tes
 
 Full methodology, formulas, and results in [`docs/EVALUATION.md`](docs/EVALUATION.md).
 
-## Notes on the Build
-
-Two significant corrections were made before the final evaluation run. First, I switched the dense encoder from `microsoft/codebert-base` to `flax-sentence-embeddings/st-codesearch-distilroberta-base` after diagnosing that generic mean-pooling on CodeBERT produced near-random retrieval embeddings — Dense MRR was 0.0017 before the swap, because CodeBERT's [CLS] token is not trained for similarity tasks without fine-tuning. Second, I found and fixed a docstring-leakage bug in the original indexing pipeline: `func_code_tokens` from CodeSearchNet includes the function's docstring tokens, so indexing that field let BM25 trivially match queries against the very text the queries were derived from. The fix was to use `func_code_string` with AST-based docstring stripping. Both issues required regenerating all indexes and re-running the full evaluation. The numbers in this README reflect the corrected methodology.
-
 ## License
 
 MIT. See [LICENSE](LICENSE).
